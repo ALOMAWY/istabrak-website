@@ -1,0 +1,199 @@
+* {
+  transition: 0.5s;
+}
+
+.red {
+  height: 5000px;
+  background-color: red;
+}
+
+a {
+  text-decoration: none;
+}
+
+.landing-screen {
+  background-image: url(/assets/images/istabrak-landing-img.jpg);
+  /* backdrop-filter: ; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  z-index: -1;
+
+  animation: image-scaling 2s linear 1;
+
+  animation-timeline: scroll(250px);
+
+  header {
+    nav {
+      div {
+        span {
+          font-size: 1.4rem;
+        }
+        svg {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  .widgets-layer {
+    position: relative;
+    top: 20%;
+
+    .text-area {
+      animation: show-text 1s cubic-bezier(0, 0, 0, 1) backwards 1;
+      h3 {
+        .large-text {
+          font-size: 7rem;
+        }
+        .medium-text {
+          font-size: 8rem;
+        }
+      }
+    }
+
+    .quote::after {
+      content: "\f10e";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      top: -20px;
+      right: -6rem;
+      color: white;
+      font-size: 6rem;
+    }
+
+    .widgets {
+      .widget {
+        flex-basis: 50%;
+        height: 33%;
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: scale-width 0.3s linear 1 forwards;
+        animation-delay: 0.5s;
+
+        h2 {
+          a {
+            width: min-content;
+          }
+        }
+      }
+
+      .widget.widget-hide {
+        opacity: 0;
+      }
+    }
+  }
+
+  .menu-area {
+    opacity: 0;
+    backdrop-filter: blur(25px);
+    .close-menu {
+      top: 100px;
+    }
+  }
+}
+.landing-screen::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  animation: show-background 0.7s cubic-bezier(0, 1.12, 0.99, 0.69) 1 forwards;
+}
+
+@keyframes show-background {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes scale-width {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes show-text {
+  0% {
+    scale: 1.5;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing-screen {
+    .widgets-layer {
+      .text-area {
+        animation: none;
+        h3 {
+          .large-text {
+            font-size: 5rem;
+          }
+          .medium-text {
+            font-size: 6rem;
+          }
+        }
+      }
+
+      .quote::after {
+        font-size: 4rem;
+        right: -4rem;
+      }
+
+      .widgets {
+        .widget {
+          height: 55%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .landing-screen {
+    .widgets-layer {
+      .text-area {
+        h3 {
+          span {
+            width: fit-content;
+          }
+          display: flex;
+          flex-direction: column;
+          .large-text {
+            font-size: 5rem;
+          }
+          .medium-text {
+            font-size: 5rem;
+          }
+        }
+      }
+
+      .quote::after {
+        font-size: 4rem;
+        right: -4rem;
+      }
+
+      .widgets {
+        .widget {
+          height: 55%;
+        }
+      }
+    }
+  }
+}
