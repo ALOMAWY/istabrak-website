@@ -38,5 +38,6 @@ window.addEventListener("scroll", () => {
 
   let scrollSize = scrollY;
 
-  if (scrollSize <= 800) screenText.style.top = scrollSize + "px";
+  if (scrollSize <= 800 && document.documentElement.clientWidth > 768)
+    screenText.style.top = scrollSize + "px";
 });
