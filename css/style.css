@@ -216,9 +216,29 @@ a {
 }
 
 @media (max-width: 767px) {
+  .navbar {
+    .container {
+      a {
+        img {
+          width: 120px;
+        }
+      }
+
+      .menu-bars {
+        .text-black {
+          font-size: 1.4rem;
+        }
+
+        svg {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
   .landing-screen {
     .widgets-layer {
-      top: 10%;
+      top: 5%;
       .text-area {
         animation: none;
         h3 {
