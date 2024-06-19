@@ -50,7 +50,7 @@ window.addEventListener("scroll", () => {
 
 const testimonials = [
   {
-    imageSrc: "/assets/images/testimonials.jpg",
+    imageSrc: "assets/images/testimonials.jpg",
     comment: `”The mati I bought for my
               daughter is designed with
               quality materials that
@@ -61,7 +61,7 @@ const testimonials = [
     personLastName: "Sa3d",
   },
   {
-    imageSrc: "/assets/images/testimonials1.jpg",
+    imageSrc: "assets/images/testimonials1.jpg",
     comment: `”I love the design and
               quality of the products.
               They are perfect for my
@@ -71,7 +71,7 @@ const testimonials = [
     personLastName: "Ahmed",
   },
   {
-    imageSrc: "/assets/images/testimonials2.jpg",
+    imageSrc: "assets/images/testimonials2.jpg",
     comment: `”The customer service was
               excellent and the product
               exceeded my expectations.“`,
@@ -80,7 +80,7 @@ const testimonials = [
     personLastName: "Khan",
   },
   {
-    imageSrc: "/assets/images/testimonials3.jpg",
+    imageSrc: "assets/images/testimonials3.jpg",
     comment: `”Highly recommend to anyone
               looking for quality and
               durability. Absolutely worth
@@ -90,7 +90,7 @@ const testimonials = [
     personLastName: "Hussein",
   },
   {
-    imageSrc: "/assets/images/testimonials4.jpg",
+    imageSrc: "assets/images/testimonials4.jpg",
     comment: `”A great experience overall.
               The product is top-notch and
               delivery was quick and easy.“`,
