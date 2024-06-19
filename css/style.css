@@ -3,11 +3,11 @@
   --lower-orange: #ac64441c;
   --dark: #000;
   --light: #fff;
+  --skyblue: #1bb0ce;
 }
 
 * {
   transition: 0.3s;
-  letter-spacing: -1px !important;
 }
 body {
   min-height: 5000px;
@@ -59,6 +59,11 @@ a {
 .main-btn {
   display: block;
   width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 .main-btn:hover {
@@ -80,6 +85,12 @@ a {
   top: 0;
   animation: bg-white-effect 0.7s linear 1 both;
   animation-timeline: view(200px);
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 3rem;
+  }
 }
 
 /* Global Styling  End*/
@@ -349,3 +360,134 @@ a {
 }
 
 /* End About  */
+
+/* Start Customers View  */
+
+.customers-talk {
+  .views {
+    h1 {
+      font-weight: 900;
+      p {
+        width: 75%;
+      }
+    }
+
+    .gallery-site {
+      .content-holder {
+        .info {
+          width: 35%;
+          top: calc(100% - 150px);
+          right: 0;
+          padding: 3rem;
+
+          .person {
+            .person-logo {
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+
+    .buttons {
+      span {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .customers-talk {
+    .views {
+      position: relative;
+      text-align: center;
+      h1 {
+        p {
+          width: 100%;
+          font-size: 2rem;
+        }
+      }
+
+      .gallery-site {
+        margin-bottom: 200px;
+        .content-holder {
+          .info {
+            flex-direction: row-reverse;
+
+            width: 100%;
+            top: calc(100%);
+            padding: 1rem;
+            blockquote {
+              /* font-size: 1.5rem; */
+              width: 61% !important;
+            }
+
+            .person {
+              margin: 0 !important;
+              width: fit-content;
+              .person-logo {
+                width: 50px;
+              }
+            }
+          }
+        }
+      }
+
+      .buttons {
+        position: absolute;
+        bottom: -225px;
+        left: 50%;
+        transform: translateX(-50%);
+        span {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+  }
+}
+
+/* End Customers View  */
+
+/* Start Products  */
+
+.products {
+  .row {
+    div {
+      img {
+        box-shadow: 0 0 20px 0px rgb(146, 144, 144);
+      }
+      img:hover {
+        box-shadow: 0 0 20px 6px rgb(146, 144, 144);
+      }
+      h3 {
+        color: var(--skyblue);
+        position: relative;
+      }
+
+      h3::before {
+        content: "";
+        width: 15%;
+        height: 1px;
+        background-color: #00000079;
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.5s;
+      }
+
+      h3:hover {
+        color: var(--orange);
+      }
+
+      h3:hover::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* End Products  */
