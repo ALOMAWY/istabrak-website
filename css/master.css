@@ -1,0 +1,1006 @@
+:root {
+  --orange: #ac6444;
+  --lower-orange: #ac64441c;
+  --dark: #000;
+  --light: #fff;
+  --alt-light: #f4f4f0;
+  --skyblue: #1bb0ce;
+}
+
+.blur-layer-hover::before, .background-light-effect-100::before, .background-black-effect-100::before, .background-altLight-effect-100::before, .background-light-effect-90::before, .background-black-effect-90::before, .background-altLight-effect-90::before, .background-light-effect-80::before, .background-black-effect-80::before, .background-altLight-effect-80::before, .background-light-effect-70::before, .background-black-effect-70::before, .background-altLight-effect-70::before, .background-light-effect-60::before, .background-black-effect-60::before, .background-altLight-effect-60::before, .background-light-effect-50::before, .background-black-effect-50::before, .background-altLight-effect-50::before, .background-light-effect-40::before, .background-black-effect-40::before, .background-altLight-effect-40::before, .background-light-effect-30::before, .background-black-effect-30::before, .background-altLight-effect-30::before, .background-light-effect-20::before, .background-black-effect-20::before, .background-altLight-effect-20::before, .background-light-effect-10::before, .background-black-effect-10::before, .background-altLight-effect-10::before {
+  content: "";
+  position: absolute;
+}
+
+.background-altLight-effect-10 {
+  position: relative;
+}
+.background-altLight-effect-10::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(90vh 100px);
+}
+
+@-webkit-keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-10 {
+  position: relative;
+}
+.background-black-effect-10::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(90vh 100px);
+}
+
+@-webkit-keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-10 {
+  position: relative;
+}
+.background-light-effect-10::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(90vh 100px);
+}
+
+@-webkit-keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-altLight-effect-20 {
+  position: relative;
+}
+.background-altLight-effect-20::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(80vh 100px);
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-20 {
+  position: relative;
+}
+.background-black-effect-20::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(80vh 100px);
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-20 {
+  position: relative;
+}
+.background-light-effect-20::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(80vh 100px);
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-altLight-effect-30 {
+  position: relative;
+}
+.background-altLight-effect-30::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(70vh 100px);
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-30 {
+  position: relative;
+}
+.background-black-effect-30::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(70vh 100px);
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-30 {
+  position: relative;
+}
+.background-light-effect-30::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(70vh 100px);
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-altLight-effect-40 {
+  position: relative;
+}
+.background-altLight-effect-40::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(60vh 100px);
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-40 {
+  position: relative;
+}
+.background-black-effect-40::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(60vh 100px);
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-40 {
+  position: relative;
+}
+.background-light-effect-40::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(60vh 100px);
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-altLight-effect-50 {
+  position: relative;
+}
+.background-altLight-effect-50::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(50vh 100px);
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-50 {
+  position: relative;
+}
+.background-black-effect-50::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(50vh 100px);
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-50 {
+  position: relative;
+}
+.background-light-effect-50::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(50vh 100px);
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-altLight-effect-60 {
+  position: relative;
+}
+.background-altLight-effect-60::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(40vh 100px);
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-60 {
+  position: relative;
+}
+.background-black-effect-60::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(40vh 100px);
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-60 {
+  position: relative;
+}
+.background-light-effect-60::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(40vh 100px);
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-altLight-effect-70 {
+  position: relative;
+}
+.background-altLight-effect-70::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(30vh 100px);
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-70 {
+  position: relative;
+}
+.background-black-effect-70::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(30vh 100px);
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-70 {
+  position: relative;
+}
+.background-light-effect-70::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(30vh 100px);
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-altLight-effect-80 {
+  position: relative;
+}
+.background-altLight-effect-80::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(20vh 100px);
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-80 {
+  position: relative;
+}
+.background-black-effect-80::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(20vh 100px);
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-80 {
+  position: relative;
+}
+.background-light-effect-80::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(20vh 100px);
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-altLight-effect-90 {
+  position: relative;
+}
+.background-altLight-effect-90::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(10vh 100px);
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-90 {
+  position: relative;
+}
+.background-black-effect-90::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(10vh 100px);
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-90 {
+  position: relative;
+}
+.background-light-effect-90::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(10vh 100px);
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-altLight-effect-100 {
+  position: relative;
+}
+.background-altLight-effect-100::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f4f4f0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-altLight-effect 1s ease-in 1 backwards;
+          animation: background-altLight-effect 1s ease-in 1 backwards;
+  animation-timeline: view(200px 100px);
+}
+
+@keyframes background-altLight-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-black-effect-100 {
+  position: relative;
+}
+.background-black-effect-100::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-black-effect 1s ease-in 1 backwards;
+          animation: background-black-effect 1s ease-in 1 backwards;
+  animation-timeline: view(200px 100px);
+}
+
+@keyframes background-black-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.background-light-effect-100 {
+  position: relative;
+}
+.background-light-effect-100::before {
+  width: 0%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: background-light-effect 1s ease-in 1 backwards;
+          animation: background-light-effect 1s ease-in 1 backwards;
+  animation-timeline: view(200px 100px);
+}
+
+@keyframes background-light-effect {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+.blur-layer-hover {
+  position: relative;
+}
+.blur-layer-hover::before {
+  width: 85%;
+  height: 85%;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.blur-layer-hover:hover::before {
+  width: 0%;
+}
+
+.show-text-y-10 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(90vh 100px);
+}
+
+.show-text-y-20 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(80vh 100px);
+}
+
+.show-text-y-30 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(70vh 100px);
+}
+
+.show-text-y-40 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(60vh 100px);
+}
+
+.show-text-y-50 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(50vh 100px);
+}
+
+.show-text-y-60 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(40vh 100px);
+}
+
+.show-text-y-70 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(30vh 100px);
+}
+
+.show-text-y-80 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(20vh 100px);
+}
+
+.show-text-y-90 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(10vh 100px);
+}
+
+.show-text-y-100 {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(0vh 100px);
+}
+
+.show-text-y {
+  -webkit-animation: show-text-y 0.5s ease-out 1 backwards;
+          animation: show-text-y 0.5s ease-out 1 backwards;
+  animation-timeline: view(100vh 100px);
+}
+
+@-webkit-keyframes show-text-y {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes show-text-y {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+.show-text-x-10 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(90vh 100px);
+}
+
+.show-text-x-20 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(80vh 100px);
+}
+
+.show-text-x-30 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(70vh 100px);
+}
+
+.show-text-x-40 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(60vh 100px);
+}
+
+.show-text-x-50 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(50vh 100px);
+}
+
+.show-text-x-60 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(40vh 100px);
+}
+
+.show-text-x-70 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(30vh 100px);
+}
+
+.show-text-x-80 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(20vh 100px);
+}
+
+.show-text-x-90 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(10vh 100px);
+}
+
+.show-text-x-100 {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(0vh 100px);
+}
+
+.show-text-x {
+  -webkit-animation: show-text-x 0.5s ease-out 1 backwards;
+          animation: show-text-x 0.5s ease-out 1 backwards;
+  animation-timeline: view(100vh 100px);
+}
+
+@-webkit-keyframes show-text-x {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes show-text-x {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@media (max-width: 767px) {
+  .animation-delay-sm-1 {
+    -webkit-animation-delay: 0.25s;
+            animation-delay: 0.25s;
+  }
+}
+.animation-delay-1 {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+@media (max-width: 767px) {
+  .animation-delay-sm-2 {
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+  }
+}
+.animation-delay-2 {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+@media (max-width: 767px) {
+  .animation-delay-sm-3 {
+    -webkit-animation-delay: 0.75s;
+            animation-delay: 0.75s;
+  }
+}
+.animation-delay-3 {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+
+@media (max-width: 767px) {
+  .animation-delay-sm-4 {
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+  }
+}
+.animation-delay-4 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}

@@ -1,0 +1,168 @@
+@use "./helpers/animation/animations" as *;
+
+:root {
+  --orange: #ac6444;
+  --lower-orange: #ac64441c;
+  --dark: #000;
+  --light: #fff;
+  --alt-light: #f4f4f0;
+  --skyblue: #1bb0ce;
+}
+
+%pseudoDefaultStyle {
+  content: "";
+  position: absolute;
+}
+
+$allColors: (
+  "altLight": "#f4f4f0",
+  "black": "#000",
+  "light": "#fff",
+);
+
+@for $i from 1 through 10 {
+  @each $color, $value in $allColors {
+    .background-#{$color}-effect-#{$i*10} {
+      position: relative;
+      &::before {
+        @extend %pseudoDefaultStyle;
+        width: 0%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        background-color: #{$value};
+        transition: 0.5s;
+        animation: background-#{$color}-effect 1s ease-in 1 backwards;
+
+        @if $i == 1 {
+          animation-timeline: view(#{100 - 10}vh 100px);
+        } @else if $i == 2 {
+          animation-timeline: view(#{100 - 20}vh 100px);
+        } @else if $i == 3 {
+          animation-timeline: view(#{100 - 30}vh 100px);
+        } @else if $i == 4 {
+          animation-timeline: view(#{100 - 40}vh 100px);
+        } @else if $i == 5 {
+          animation-timeline: view(#{100 - 50}vh 100px);
+        } @else if $i == 6 {
+          animation-timeline: view(#{100 - 60}vh 100px);
+        } @else if $i == 7 {
+          animation-timeline: view(#{100 - 70}vh 100px);
+        } @else if $i == 8 {
+          animation-timeline: view(#{100 - 80}vh 100px);
+        } @else if $i == 9 {
+          animation-timeline: view(#{100 - 90}vh 100px);
+        } @else {
+          animation-timeline: view(200px 100px);
+        }
+      }
+    }
+
+    @include animations("background-#{$color}-effect") {
+      from {
+        width: 100%;
+      }
+      to {
+        width: 0%;
+      }
+    }
+  }
+}
+
+$animationName: "blur-layer-hover";
+
+.#{$animationName} {
+  position: relative;
+
+  &::before {
+    @extend %pseudoDefaultStyle;
+    width: 85%;
+    height: 85%;
+    background-color: transparent;
+    backdrop-filter: blur(1px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+  }
+
+  &:hover::before {
+    width: 0%;
+  }
+}
+
+@mixin showText($direction) {
+  @for $i from 1 through 10 {
+    .show-text-#{$direction}-#{$i*10} {
+      animation: show-text-#{$direction} 0.5s ease-out 1 backwards;
+
+      @if $i == 1 {
+        animation-timeline: view(#{100 - 10}vh 100px);
+      } @else if $i == 2 {
+        animation-timeline: view(#{100 - 20}vh 100px);
+      } @else if $i == 3 {
+        animation-timeline: view(#{100 - 30}vh 100px);
+      } @else if $i == 4 {
+        animation-timeline: view(#{100 - 40}vh 100px);
+      } @else if $i == 5 {
+        animation-timeline: view(#{100 - 50}vh 100px);
+      } @else if $i == 6 {
+        animation-timeline: view(#{100 - 60}vh 100px);
+      } @else if $i == 7 {
+        animation-timeline: view(#{100 - 70}vh 100px);
+      } @else if $i == 8 {
+        animation-timeline: view(#{100 - 80}vh 100px);
+      } @else if $i == 9 {
+        animation-timeline: view(#{100 - 90}vh 100px);
+      } @else if $i == 10 {
+        animation-timeline: view(#{100 - 100}vh 100px);
+      } @else {
+        animation-timeline: view(700px 100px);
+      }
+    }
+  }
+
+  .show-text-#{$direction} {
+    animation: show-text-#{$direction} 0.5s ease-out 1 backwards;
+    animation-timeline: view(100vh 100px);
+  }
+
+  @include animations(show-text-#{$direction}) {
+    @if $direction == "y" {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    } @else if $direction == "x" {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
+}
+
+@include showText("y");
+@include showText("x");
+
+$delay: 0.25;
+
+@for $i from 1 through 4 {
+  @media (max-width: 767px) {
+    .animation-delay-sm-#{$i} {
+      animation-delay: #{$delay}s;
+    }
+  }
+  .animation-delay-#{$i} {
+    animation-delay: #{$delay}s;
+  }
+  $delay: $delay + 0.25;
+}

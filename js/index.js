@@ -31,8 +31,10 @@ HTMLElement.prototype.getElementStyle = function (property) {
 };
 
 let screenText = document.querySelector(
-  ".landing-screen .widgets-layer .container .row .text-area"
+  ".landing-screen .widgets-layer .container-75 .row .text-area"
 );
+
+console.log(screenText);
 
 window.addEventListener("scroll", () => {
   screenText.classList.add("position-relative");
@@ -56,7 +58,7 @@ const testimonials = [
               quality materials that
               protect her against the
               risk of allergy “`,
-    personLogoSrc: "assets/images/user.jpg",
+    personLogoSrc: "assets/images/user.png",
     personFirstName: "Ali",
     personLastName: "Sa3d",
   },
@@ -66,7 +68,7 @@ const testimonials = [
               quality of the products.
               They are perfect for my
               sensitive skin.“`,
-    personLogoSrc: "assets/images/user.jpg",
+    personLogoSrc: "assets/images/user.png",
     personFirstName: "Hana",
     personLastName: "Ahmed",
   },
@@ -75,7 +77,7 @@ const testimonials = [
     comment: `”The customer service was
               excellent and the product
               exceeded my expectations.“`,
-    personLogoSrc: "assets/images/user.jpg",
+    personLogoSrc: "assets/images/user.png",
     personFirstName: "Omar",
     personLastName: "Khan",
   },
@@ -85,7 +87,7 @@ const testimonials = [
               looking for quality and
               durability. Absolutely worth
               every penny.“`,
-    personLogoSrc: "assets/images/user.jpg",
+    personLogoSrc: "assets/images/user.png",
     personFirstName: "Lina",
     personLastName: "Hussein",
   },
@@ -94,7 +96,7 @@ const testimonials = [
     comment: `”A great experience overall.
               The product is top-notch and
               delivery was quick and easy.“`,
-    personLogoSrc: "assets/images/user.jpg",
+    personLogoSrc: "assets/images/user.png",
     personFirstName: "Zaid",
     personLastName: "Salim",
   },
