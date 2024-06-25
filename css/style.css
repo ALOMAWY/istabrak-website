@@ -13,9 +13,6 @@
   transition: 0.3s;
 }
 
-body {
-}
-
 a {
   text-decoration: none;
 }
@@ -75,6 +72,53 @@ a {
     font-size: 3rem;
   }
 }
+
+/* Add Container Break Points */
+
+@media (max-width: 576px) {
+  .container-75 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+  .container-75 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 13px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container-75 {
+    width: 85%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container-75 {
+    width: 80%;
+    margin: 0 auto;
+    padding: 17px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .container-75 {
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1400px) {
+}
+
+/* Add Container Break Points */
 
 /* Global Styling  End*/
 
@@ -280,8 +324,6 @@ a {
 
   .container-75 {
     .text-area {
-      h2 {
-      }
       h1 {
         font-size: 3.5rem;
         font-weight: 900;
@@ -294,7 +336,7 @@ a {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1200px) {
   .about {
     min-height: 100vh;
     /* padding: 100px; */
@@ -305,7 +347,6 @@ a {
         h1 {
           font-size: 3rem;
         }
-
         div {
           max-width: 100%;
         }
@@ -330,9 +371,9 @@ a {
 
       h1 {
         font-weight: 900;
-        p {
-          width: 75%;
-        }
+        /* p {
+          width: 100%;
+        } */
       }
 
       .gallery-site {
@@ -340,9 +381,10 @@ a {
           width: 70%;
           margin: 0 auto;
           .info {
-            width: 35%;
+            width: 67%;
             top: calc(100% - 150px);
-            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
             padding: 3rem;
 
             .person {
@@ -355,6 +397,8 @@ a {
       }
 
       .buttons {
+        width: 100%;
+        justify-content: space-between;
         span {
           width: 70px;
           height: 70px;
