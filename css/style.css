@@ -129,7 +129,6 @@ a {
 
 .landing-screen {
   background-image: url(../assets/images/istabrak-landing-img.jpg);
-  /* backdrop-filter: ; */
   background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
@@ -155,7 +154,14 @@ a {
     top: 20%;
 
     .text-area {
+      animation: show-landing-text 0.38s linear 1 backwards;
       h3 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        span {
+          width: fit-content;
+        }
         .large-text {
           font-size: 7rem;
         }
@@ -183,8 +189,7 @@ a {
         transform: scaleX(0);
         transform-origin: left;
         animation: scale-width 0.4s ease-out 1 forwards;
-        animation-delay: 1s;
-
+        animation-delay: 0s;
         h2 {
           a {
             width: min-content;
@@ -218,14 +223,14 @@ a {
   }
 }
 
-@keyframes show-text {
-  0% {
-    scale: 1.5;
-    opacity: 0;
+@keyframes show-landing-text {
+  from {
+    opacity: 0.6;
+    scale: 0.7;
   }
-  100% {
-    scale: 1;
+  to {
     opacity: 1;
+    scale: 1;
   }
 }
 
@@ -285,17 +290,23 @@ a {
   .landing-screen {
     .widgets-layer {
       .text-area {
+        p {
+          font-size: 0.8rem !important;
+        }
         h3 {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+
           span {
             width: fit-content;
           }
-          display: flex;
-          flex-direction: column;
+
           .large-text {
-            font-size: 5rem;
+            font-size: 3rem;
           }
           .medium-text {
-            font-size: 5rem;
+            font-size: 3rem;
           }
         }
       }
@@ -320,7 +331,6 @@ a {
 
 .about {
   min-height: 100vh;
-  /* padding: 100px; */
 
   .container-75 {
     .text-area {
@@ -378,6 +388,7 @@ a {
 
       .gallery-site {
         .content-holder {
+          border: 25px solid var(--light);
           width: 70%;
           margin: 0 auto;
           .info {
@@ -506,7 +517,29 @@ a {
 
 /* Start Discover */
 
+@keyframes show-black-bg {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
 .discover {
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    animation: show-black-bg 1s linear 1 forwards;
+    animation-timeline: view(75vh 0);
+  }
   .container-75 {
     .row {
       padding: 8rem 0;
@@ -562,6 +595,7 @@ a {
 /* Start Footer */
 
 footer {
+  background-color: var(--alt-light);
   padding: 7rem;
 
   .row {

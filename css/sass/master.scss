@@ -158,7 +158,7 @@ $delay: 0.25;
 @for $i from 1 through 4 {
   @media (max-width: 767px) {
     .animation-delay-sm-#{$i} {
-      animation-delay: #{$delay}s;
+      animation-delay: #{$delay}s !important;
     }
   }
   .animation-delay-#{$i} {
