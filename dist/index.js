@@ -91,15 +91,25 @@ nextButton.addEventListener("click", () => {
 });
 function setContentInsertHTML(tracker) {
     let image = (document.querySelector(".gallery-site .content-holder img"));
-    image.src = testimonials[tracker].imageSrc;
     let comment = (document.querySelector(".gallery-site .content-holder blockquote"));
-    comment.innerHTML = testimonials[tracker].comment;
     let personImage = (document.querySelector(".gallery-site .content-holder .person .person-logo img"));
-    personImage.src = testimonials[tracker].personLogoSrc;
     let personFirstName = (document.querySelector(".gallery-site .content-holder .person .name .first-name"));
-    personFirstName.innerHTML = testimonials[tracker].personFirstName;
     let personLastName = (document.querySelector(".gallery-site .content-holder .person .name .last-name"));
-    personLastName.innerHTML = testimonials[tracker].personLastName;
+    image.src = testimonials[tracker].imageSrc;
+    const PROMISE = new Promise((resolve, rejected) => {
+        function setData() {
+            comment.innerHTML = testimonials[tracker].comment;
+            personImage.src = testimonials[tracker].personLogoSrc;
+            personFirstName.innerHTML = testimonials[tracker].personFirstName;
+            personLastName.innerHTML = testimonials[tracker].personLastName;
+        }
+        if (image.getAttribute("src") == testimonials[tracker].imageSrc) {
+            resolve(setData());
+        }
+        else {
+            rejected(console.log(image.getAttribute("src") === testimonials[tracker].imageSrc));
+        }
+    });
 }
 // End Customers Talk
 // Start Product
@@ -109,7 +119,12 @@ function setContentInsertHTML(tracker) {
 const showProducts = (document.querySelector("footer div ul li.show-products"));
 showProducts.addEventListener("click", () => {
     let products = (document.querySelector("footer div ul li.show-products ul"));
-    products.classList.toggle("d-none");
+    if (products.clientWidth > 1) {
+        products.style.cssText = `height: 0px; width: 0px; opacity: 0;`;
+    }
+    else {
+        products.style.cssText = `height: 150px; width: 100%; opacity: 1;`;
+    }
 });
 HTMLElement.prototype.getElementStyle = function (property) {
     return window.getComputedStyle(this).getPropertyValue(property);

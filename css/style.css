@@ -11,6 +11,7 @@
 
 * {
   transition: 0.3s;
+  user-select: none;
 }
 
 a {
@@ -613,6 +614,30 @@ footer {
         top: -20px;
       }
     }
+    div {
+      ul {
+        .show-products {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          width: 100%;
+          
+          span:not(.plus-icon) {
+            padding-right: 10px;
+          }
+
+          &:hover {
+            span.plus-icon {
+              position: relative;
+              width: fit-content;
+              transform: rotate(85deg);
+              transform-origin: center;
+              display: block;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -641,7 +666,6 @@ footer {
           position: absolute;
           top: -20px;
           left: 50%;
-          transform: translateX(-50%);
         }
       }
 
@@ -664,7 +688,6 @@ footer {
   .copyright {
     text-align: center;
     font-size: 0.57rem;
-
     margin-bottom: 40px;
   }
 }

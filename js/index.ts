@@ -122,13 +122,9 @@ function setContentInsertHTML(tracker: number): void {
     document.querySelector(".gallery-site .content-holder img")
   );
 
-  image.src = testimonials[tracker].imageSrc;
-
   let comment = <HTMLElement>(
     document.querySelector(".gallery-site .content-holder blockquote")
   );
-
-  comment.innerHTML = testimonials[tracker].comment;
 
   let personImage = <HTMLImageElement>(
     document.querySelector(
@@ -136,22 +132,41 @@ function setContentInsertHTML(tracker: number): void {
     )
   );
 
-  personImage.src = testimonials[tracker].personLogoSrc;
-
   let personFirstName = <HTMLElement>(
     document.querySelector(
       ".gallery-site .content-holder .person .name .first-name"
     )
   );
 
-  personFirstName.innerHTML = testimonials[tracker].personFirstName;
-
   let personLastName = <HTMLElement>(
     document.querySelector(
       ".gallery-site .content-holder .person .name .last-name"
     )
   );
-  personLastName.innerHTML = testimonials[tracker].personLastName;
+
+  image.src = testimonials[tracker].imageSrc;
+
+  const PROMISE = new Promise((resolve, rejected) => {
+    function setData() {
+      comment.innerHTML = testimonials[tracker].comment;
+
+      personImage.src = testimonials[tracker].personLogoSrc;
+
+      personFirstName.innerHTML = testimonials[tracker].personFirstName;
+
+      personLastName.innerHTML = testimonials[tracker].personLastName;
+    }
+
+    if (image.getAttribute("src") == testimonials[tracker].imageSrc) {
+      resolve(setData());
+    } else {
+      rejected(
+        console.log(
+          image.getAttribute("src") === testimonials[tracker].imageSrc
+        )
+      );
+    }
+  });
 }
 
 // End Customers Talk
@@ -172,7 +187,12 @@ showProducts.addEventListener("click", () => {
   let products = <HTMLElement>(
     document.querySelector("footer div ul li.show-products ul")
   );
-  products.classList.toggle("d-none");
+
+  if (products.clientWidth > 1) {
+    products.style.cssText = `height: 0px; width: 0px; opacity: 0;`;
+  } else {
+    products.style.cssText = `height: 150px; width: 100%; opacity: 1;`;
+  }
 });
 
 // // End Footer
