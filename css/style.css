@@ -617,22 +617,31 @@ footer {
     div {
       ul {
         .show-products {
-          display: flex;
-          flex-wrap: nowrap;
-          justify-content: flex-start;
-          width: 100%;
-          
-          span:not(.plus-icon) {
-            padding-right: 10px;
+          p {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            width: 100%;
+
+            span:not(.plus-icon) {
+              padding-right: 10px;
+            }
+            span.plus-icon {
+              position: relative;
+              width: 20px;
+              height: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transform-origin: center;
+            }
           }
 
           &:hover {
-            span.plus-icon {
-              position: relative;
-              width: fit-content;
-              transform: rotate(85deg);
-              transform-origin: center;
-              display: block;
+            p {
+              span.plus-icon {
+                transform: rotate(85deg);
+              }
             }
           }
         }
@@ -678,6 +687,17 @@ footer {
             display: block;
             a {
               display: block;
+            }
+          }
+
+          .show-products {
+            p {
+              justify-content: center;
+              align-items: center;
+
+              span:not(.plus-icon) {
+                padding-right: 10px;
+              }
             }
           }
         }
