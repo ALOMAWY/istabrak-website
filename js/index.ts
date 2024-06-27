@@ -1,11 +1,13 @@
 // Start Landing
 
-let menuShowButton = document.getElementById("menu-btn");
+let menuShowButton = <HTMLElement>document.getElementById("menu-btn");
 
-let menuList = document.querySelector(".landing-screen .menu-area");
+let menuList = <HTMLElement>(
+  document.querySelector(".landing-screen .menu-area")
+);
 
-let menuCloseButton = document.querySelector(
-  ".landing-screen .menu-area .close-menu"
+let menuCloseButton = <HTMLElement>(
+  document.querySelector(".landing-screen .menu-area .close-menu")
 );
 
 let navBar = document.querySelector(".landing-screen header nav");
@@ -26,19 +28,17 @@ menuCloseButton.addEventListener("click", (e) => {
   }, 300);
 });
 
-HTMLElement.prototype.getElementStyle = function (property) {
-  return window.getComputedStyle(this)[property];
-};
-
-let screenText = document.querySelector(
-  ".landing-screen .widgets-layer .container-75 .row .text-area"
+let screenText = <HTMLElement>(
+  document.querySelector(
+    ".landing-screen .widgets-layer .container-75 .row .text-area"
+  )
 );
 
 console.log(screenText);
 
 window.addEventListener("scroll", () => {
-  screenText.classList.add("position-relative");
-  screenText.classList.add("z-1");
+  screenText?.classList.add("position-relative");
+  screenText?.classList.add("z-1");
 
   let scrollSize = scrollY;
 
@@ -102,9 +102,9 @@ const testimonials = [
   },
 ];
 
-let prevButton = document.getElementById("gallery-prev-button");
+let prevButton = <HTMLElement>document.getElementById("gallery-prev-button");
 
-let nextButton = document.getElementById("gallery-next-button");
+let nextButton = <HTMLElement>document.getElementById("gallery-next-button");
 
 let tracker = 0;
 
@@ -117,30 +117,39 @@ nextButton.addEventListener("click", () => {
   setContentInsertHTML(tracker);
 });
 
-function setContentInsertHTML(tracker) {
-  let image = document.querySelector(".gallery-site .content-holder img");
+function setContentInsertHTML(tracker: number): void {
+  let image = <HTMLImageElement>(
+    document.querySelector(".gallery-site .content-holder img")
+  );
 
   image.src = testimonials[tracker].imageSrc;
-  let comment = document.querySelector(
-    ".gallery-site .content-holder blockquote"
+
+  let comment = <HTMLElement>(
+    document.querySelector(".gallery-site .content-holder blockquote")
   );
 
   comment.innerHTML = testimonials[tracker].comment;
 
-  let personImage = document.querySelector(
-    ".gallery-site .content-holder .person .person-logo img"
+  let personImage = <HTMLImageElement>(
+    document.querySelector(
+      ".gallery-site .content-holder .person .person-logo img"
+    )
   );
 
   personImage.src = testimonials[tracker].personLogoSrc;
 
-  let personFirstName = document.querySelector(
-    ".gallery-site .content-holder .person .name .first-name"
+  let personFirstName = <HTMLElement>(
+    document.querySelector(
+      ".gallery-site .content-holder .person .name .first-name"
+    )
   );
 
   personFirstName.innerHTML = testimonials[tracker].personFirstName;
 
-  let personLastName = document.querySelector(
-    ".gallery-site .content-holder .person .name .last-name"
+  let personLastName = <HTMLElement>(
+    document.querySelector(
+      ".gallery-site .content-holder .person .name .last-name"
+    )
   );
   personLastName.innerHTML = testimonials[tracker].personLastName;
 }
@@ -149,11 +158,46 @@ function setContentInsertHTML(tracker) {
 
 // Start Product
 
-let productSquare = document.querySelectorAll(".products .row div img");
-
-productSquare.forEach((e) => {
-  // console.log(e.getElementStyle("width"));
-  // e.style.height = e.clientWidth;
-});
+/// - - - - - - - - - - - - - -
 
 // End Product
+
+// // Start Footer
+
+const showProducts = <HTMLElement>(
+  document.querySelector("footer div ul li.show-products")
+);
+
+showProducts.addEventListener("click", () => {
+  let products = <HTMLElement>(
+    document.querySelector("footer div ul li.show-products ul")
+  );
+  products.classList.toggle("d-none");
+});
+
+// // End Footer
+
+// Methods And Functions
+
+// Get Css Property Value From Element
+
+interface HTMLElement {
+  /**
+   * @param {string} property
+   * @returns {string}
+   * @example
+   * // Assuming an element with id 'myDiv' has a width set in CSS
+   * const div = document.getElementById('myDiv') as HTMLDivElement;
+   * console.log(div.getElementStyle('width')); // Logs the computed width
+   */
+
+  getElementStyle(property: string): string;
+}
+
+HTMLElement.prototype.getElementStyle = function (property: string): string {
+  return window.getComputedStyle(this).getPropertyValue(property);
+};
+
+console.log(document.body.getElementStyle("width"));
+
+// Methods And Functions
