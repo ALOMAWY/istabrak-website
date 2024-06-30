@@ -1,5 +1,10 @@
 @use "./helpers/animation/animations" as *;
 
+@use "./pages/who_we_are" as *;
+
+@use "./helpers/colors" as *;
+
+@use "../sass/pages/home_page";
 :root {
   --orange: #ac6444;
   --lower-orange: #ac64441c;
@@ -7,18 +12,541 @@
   --light: #fff;
   --alt-light: #f4f4f0;
   --skyblue: #1bb0ce;
+
+  --gray: #ffffff4a;
 }
+
+* {
+  transition: 0.3s;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* adding to bootstrap  Start*/
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* adding to bootstrap  End*/
+
+/* Global Styling  Start*/
+
+.container-75 {
+  width: 75%;
+  margin: 0 auto;
+}
+
+header {
+  nav {
+    div {
+      span {
+        font-size: 1.4rem;
+      }
+      svg {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.menu-area {
+  opacity: 0;
+  backdrop-filter: blur(25px);
+  .close-menu {
+    top: 100px;
+  }
+
+  &::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.45;
+  }
+}
+
+.section-title {
+  font-size: 5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--lower-orange);
+}
+.main-btn {
+  display: block;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.main-btn:hover {
+  background-color: var(--orange) !important;
+  color: var(--dark) !important;
+}
+
+.background-effect {
+  position: relative;
+}
+
+.background-effect::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.big-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  word-spacing: -2px;
+}
+
+.icon-holder {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+
+  svg {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+/* Add Container Break Points */
+
+@media (max-width: 576px) {
+  .container-75 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 767px) {
+  .container-75 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 13px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container-75 {
+    width: 85%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container-75 {
+    width: 80%;
+    margin: 0 auto;
+    padding: 17px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .container-75 {
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1400px) {
+}
+
+/* Add Container Break Points */
+
+/* Global Styling  End*/
+
+/* animation  */
+/* animation  */
+
+/* Start Landing  */
+
+.landing-screen {
+  /* background-image: url(../assets/images/landing.jpg); */
+  background-image: url(../assets/images/landing.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  z-index: -1;
+
+  .widgets-layer {
+    position: relative;
+    top: 20%;
+
+    .text-area {
+      animation: show-landing-text 0.38s linear 1 backwards;
+      h3 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        span {
+          width: fit-content;
+        }
+        .large-text {
+          font-size: 7rem;
+        }
+        .medium-text {
+          font-size: 8rem;
+        }
+      }
+    }
+
+    .quote::after {
+      content: "\f10e";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      top: -20px;
+      right: -6rem;
+      color: white;
+      font-size: 6rem;
+    }
+
+    .widgets {
+      .widget {
+        flex-basis: 50%;
+        height: 25%;
+        transform: scaleX(0);
+        transform-origin: left;
+        animation: scale-width 0.4s ease-out 1 forwards;
+        animation-delay: 0s;
+        h2 {
+          a {
+            width: min-content;
+          }
+        }
+      }
+
+      .widget.widget-hide {
+        opacity: 0;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.45;
+  }
+}
+
+/* Landing Animations  */
+
+@keyframes scale-width {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes show-landing-text {
+  from {
+    opacity: 0.6;
+    scale: 0.7;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    .container {
+      a {
+        img {
+          width: 120px;
+        }
+      }
+
+      .menu-bars {
+        .text-black {
+          font-size: 1.4rem;
+        }
+
+        svg {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .landing-screen {
+    .widgets-layer {
+      top: 5%;
+      .text-area {
+        animation: show-landing-text 0.38s linear 1 backwards;
+        h3 {
+          .large-text {
+            font-size: 5rem;
+          }
+          .medium-text {
+            font-size: 6rem;
+          }
+        }
+      }
+
+      .quote::after {
+        font-size: 4rem;
+        right: -4rem;
+      }
+
+      .widgets {
+        .widget {
+          height: 55%;
+        }
+      }
+    }
+  }
+}
+
+/* Start Discover */
+
+@keyframes show-black-bg {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.discover {
+  position: relative;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    animation: show-black-bg 1s linear 1 forwards;
+    animation-timeline: view(75vh 0);
+  }
+  .container-75 {
+    .row {
+      padding: 8rem 0;
+      h1 {
+        p {
+          width: 90%;
+          font-weight: 900;
+          letter-spacing: -1;
+        }
+      }
+      div {
+        p {
+          width: 45%;
+        }
+        a {
+          background-color: var(--orange);
+          color: var(--dark);
+          font-weight: 500;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        a:hover {
+          background-color: var(--dark);
+          color: var(--orange);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .discover {
+    .container-75 {
+      .row {
+        text-align: center;
+        h1 {
+          p {
+            width: 100%;
+          }
+        }
+        div {
+          flex-wrap: wrap;
+          p {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+/* End Discover */
+
+/* Start Footer */
+
+footer {
+  background-color: var(--alt-light);
+  padding: 7rem;
+
+  .row {
+    .info {
+      h3 {
+        width: fit-content;
+      }
+      h3::before {
+        content: "";
+        width: 50%;
+        height: 1px;
+        background-color: #000;
+        position: absolute;
+        left: 0;
+        top: -20px;
+      }
+    }
+    div {
+      ul {
+        .show-products {
+          p {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            width: 100%;
+
+            span:not(.plus-icon) {
+              padding-right: 10px;
+            }
+            span.plus-icon {
+              position: relative;
+              width: 20px;
+              height: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transform-origin: center;
+            }
+          }
+
+          &:hover {
+            p {
+              span.plus-icon {
+                transform: rotate(85deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    padding: 7rem 0;
+    .row {
+      text-align: center;
+      .info {
+        width: 100%;
+        margin-bottom: 50px;
+        padding-top: 3rem;
+        h3 {
+          width: 100%;
+        }
+
+        p {
+          width: 100% !important;
+        }
+
+        h3::before {
+          content: "";
+          width: 50px;
+          height: 1px;
+          background-color: #000;
+          position: absolute;
+          top: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      div {
+        width: 40%;
+        ul {
+          text-align: center;
+
+          li {
+            display: block;
+            a {
+              display: block;
+            }
+          }
+
+          .show-products {
+            p {
+              justify-content: center;
+              align-items: center;
+
+              span:not(.plus-icon) {
+                padding-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 0.57rem;
+    margin-bottom: 40px;
+  }
+}
+
+/* End Footer */
+
+// Before & After Default Styling
 
 %pseudoDefaultStyle {
   content: "";
   position: absolute;
 }
 
+// Create Background Effects With All Colors
+
 $allColors: (
   "altLight": "#f4f4f0",
   "black": "#000",
   "light": "#fff",
 );
+
+// Create Background Effect Animation Classes As From 10 - 100 As View Port Height Percent
 
 @for $i from 1 through 10 {
   @each $color, $value in $allColors {
@@ -91,6 +619,16 @@ $animationName: "blur-layer-hover";
   }
 }
 
+// Create Show Text Animation Classes As From 10 - 100 As View Port Height Percent
+
+
+
+
+
+/*
+
+* @name: blur-layer-hover
+*/
 @mixin showText($direction) {
   @for $i from 1 through 10 {
     .show-text-#{$direction}-#{$i*10} {
@@ -150,7 +688,10 @@ $animationName: "blur-layer-hover";
   }
 }
 
+// Make Animation For Y Access 
 @include showText("y");
+
+// Make Animation For X Access 
 @include showText("x");
 
 $delay: 0.25;
@@ -165,4 +706,10 @@ $delay: 0.25;
     animation-delay: #{$delay}s;
   }
   $delay: $delay + 0.25;
+}
+
+@for $i from 0 to 20 {
+  .ls-#{$i} {
+    letter-spacing: #{$i}px;
+  }
 }
