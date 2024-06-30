@@ -182,105 +182,6 @@ header {
 /* animation  */
 /* animation  */
 
-/* Start Landing  */
-
-.landing-screen {
-  /* background-image: url(../assets/images/landing.jpg); */
-  background-image: url(../assets/images/landing.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  background-attachment: fixed;
-  z-index: -1;
-
-  .widgets-layer {
-    position: relative;
-    top: 20%;
-
-    .text-area {
-      animation: show-landing-text 0.38s linear 1 backwards;
-      h3 {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        span {
-          width: fit-content;
-        }
-        .large-text {
-          font-size: 7rem;
-        }
-        .medium-text {
-          font-size: 8rem;
-        }
-      }
-    }
-
-    .quote::after {
-      content: "\f10e";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      top: -20px;
-      right: -6rem;
-      color: white;
-      font-size: 6rem;
-    }
-
-    .widgets {
-      .widget {
-        flex-basis: 50%;
-        height: 25%;
-        transform: scaleX(0);
-        transform-origin: left;
-        animation: scale-width 0.4s ease-out 1 forwards;
-        animation-delay: 0s;
-        h2 {
-          a {
-            width: min-content;
-          }
-        }
-      }
-
-      .widget.widget-hide {
-        opacity: 0;
-      }
-    }
-  }
-
-  &::before {
-    content: "";
-    background-color: black;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.45;
-  }
-}
-
-/* Landing Animations  */
-
-@keyframes scale-width {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
-
-@keyframes show-landing-text {
-  from {
-    opacity: 0.6;
-    scale: 0.7;
-  }
-  to {
-    opacity: 1;
-    scale: 1;
-  }
-}
 
 @media (max-width: 767px) {
   .navbar {
@@ -298,34 +199,6 @@ header {
 
         svg {
           font-size: 1.5rem;
-        }
-      }
-    }
-  }
-
-  .landing-screen {
-    .widgets-layer {
-      top: 5%;
-      .text-area {
-        animation: show-landing-text 0.38s linear 1 backwards;
-        h3 {
-          .large-text {
-            font-size: 5rem;
-          }
-          .medium-text {
-            font-size: 6rem;
-          }
-        }
-      }
-
-      .quote::after {
-        font-size: 4rem;
-        right: -4rem;
-      }
-
-      .widgets {
-        .widget {
-          height: 55%;
         }
       }
     }
@@ -621,10 +494,6 @@ $animationName: "blur-layer-hover";
 
 // Create Show Text Animation Classes As From 10 - 100 As View Port Height Percent
 
-
-
-
-
 /*
 
 * @name: blur-layer-hover
@@ -688,10 +557,10 @@ $animationName: "blur-layer-hover";
   }
 }
 
-// Make Animation For Y Access 
+// Make Animation For Y Access
 @include showText("y");
 
-// Make Animation For X Access 
+// Make Animation For X Access
 @include showText("x");
 
 $delay: 0.25;
