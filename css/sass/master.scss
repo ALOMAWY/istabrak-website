@@ -2,6 +2,8 @@
 
 @use "./pages/who_we_are" as *;
 
+@use "./pages/contact" as *;
+
 @use "./helpers/colors" as *;
 
 @use "../sass/pages/home_page";
@@ -109,7 +111,7 @@ header {
 
 .big-title {
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 800;
   word-spacing: -2px;
 }
 
@@ -138,6 +140,10 @@ header {
     margin: 0 auto;
     padding: 10px;
   }
+
+  .big-title {
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 577px) and (max-width: 767px) {
@@ -146,6 +152,9 @@ header {
     margin: 0 auto;
     padding: 13px;
   }
+  .big-title {
+    font-size: 2.5rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -153,6 +162,10 @@ header {
     width: 85%;
     margin: 0 auto;
     padding: 15px;
+  }
+
+  .big-title {
+    font-size: 3rem;
   }
 }
 
@@ -181,7 +194,6 @@ header {
 
 /* animation  */
 /* animation  */
-
 
 @media (max-width: 767px) {
   .navbar {
