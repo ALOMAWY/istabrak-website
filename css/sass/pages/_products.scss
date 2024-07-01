@@ -1,0 +1,34 @@
+.products {
+  .container-75 {
+    .holder {
+      .row {
+        div {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          img {
+            &:hover {
+              filter: contrast(5);
+              scale: 0.9;
+            }
+          }
+        }
+      }
+      .show-more {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.gallery {
+  div:has(> svg) {
+    transition: 0.1s;
+    &:hover {
+      transition: 0.1s;
+      color: var(--skyblue);
+    }
+  }
+}

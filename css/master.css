@@ -103,6 +103,31 @@
     margin: 30px auto;
   }
 }
+.products .container-75 .holder .row div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+.products .container-75 .holder .row div img:hover {
+  -webkit-filter: contrast(5);
+          filter: contrast(5);
+  scale: 0.9;
+}
+
+.gallery div:has(> svg) {
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+.gallery div:has(> svg):hover {
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  color: var(--skyblue);
+}
+
 /* animation  */
 /* animation  */
 /* Start Landing  */
