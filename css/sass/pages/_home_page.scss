@@ -342,36 +342,38 @@
 
 /* Start Products  */
 
-.products {
-  .row {
-    div {
-      img {
-        box-shadow: 0 0 20px 0px rgb(146, 144, 144);
-      }
+.our-product {
+  .products {
+    .row {
+      div {
+        img {
+          box-shadow: 0 0 20px 0px rgb(146, 144, 144);
+        }
 
-      h3 {
-        color: var(--skyblue);
-        position: relative;
-      }
+        h3 {
+          color: var(--skyblue);
+          position: relative;
+        }
 
-      h3::before {
-        content: "";
-        width: 15%;
-        height: 1px;
-        background-color: #00000079;
-        position: absolute;
-        bottom: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: 0.5s;
-      }
+        h3::before {
+          content: "";
+          width: 15%;
+          height: 1px;
+          background-color: #00000079;
+          position: absolute;
+          bottom: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: 0.5s;
+        }
 
-      h3:hover {
-        color: var(--orange);
-      }
+        h3:hover {
+          color: var(--orange);
+        }
 
-      h3:hover::before {
-        width: 100%;
+        h3:hover::before {
+          width: 100%;
+        }
       }
     }
   }

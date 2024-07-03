@@ -6,6 +6,8 @@
           display: flex;
           align-items: center;
           cursor: pointer;
+          padding: 10px;
+          // flex-grow: 1 !important;
 
           img {
             &:hover {
@@ -16,8 +18,9 @@
         }
       }
       .show-more {
-        width: 100%;
-        text-align: center;
+        width: fit-content;
+        background-color: var(--orange);
+        color: var(--light);
       }
     }
   }

@@ -6,39 +6,39 @@ let showMore_1 = document.querySelector(".products .container-75 .holder-1 .show
 let showMore_2 = document.querySelector(".products .container-75 .holder-2 .show-more");
 let pCards1 = Array.from(productsCard1);
 let pCards2 = Array.from(productsCard2);
-showMore_2 === null || showMore_2 === void 0 ? void 0 : showMore_2.addEventListener("click", () => {
-    let showingCards = pCards2.filter((card) => !card.classList.contains("d-none")).length;
-    if (showingCards < pCards2.length) {
-        pCards2.forEach((e, i) => {
-            let ele = e;
-            if (i >= showingCards && i < showingCards + 4) {
-                scalingShow(ele);
+// showMore_2?.addEventListener("click", () => {
+//   pCards2.forEach((e, i) => {
+//     let ele = e as HTMLElement;
+//     if (i >= showingCards && i < showingCards + 4) {
+//       scalingShow(ele);
+//     }
+//   });
+// });
+function cardsFlowControl(cards, showMore) {
+    let showingCards = cards === null || cards === void 0 ? void 0 : cards.filter((card) => !card.classList.contains("d-none")).length;
+    if (cards.length > showingCards) {
+        showMore.classList.remove("d-none");
+        cards.forEach((ele, index) => {
+            if (index > showingCards && index < showingCards + 4) {
+                // function scalingShow(ele: HTMLElement) {
+                //   ele.style.scale = "0 1";
+                //   ele.classList.remove("d-none");
+                //   setTimeout(() => {
+                //     ele.style.scale = "1 1";
+                //   }, 0);
+                // }
+                // scalingShow(ele);
+                ele.classList.remove("d-none");
             }
         });
     }
     else {
-        showMore_2.innerHTML = "";
+        showMore.classList.add("d-none");
     }
-    console.log(showingCards);
-});
+}
 let cardsList = [Array.from(productsCard1), Array.from(productsCard2)];
 let gallery = document.getElementById("gallery");
 let selectedImage = document.getElementById("selected-image");
-cardsList.forEach((crds, index) => {
-    crds.forEach((crd, index) => {
-        let card = crd;
-        if (index >= 8) {
-            card.classList.add("d-none");
-        }
-    });
-});
-function scalingShow(ele) {
-    ele.style.scale = "0 1";
-    ele.classList.remove("d-none");
-    setTimeout(() => {
-        ele.style.scale = "1 1";
-    }, 0);
-}
 productsCard1.forEach((crd) => {
     let card = crd;
     let cardWidth = card.clientWidth;
@@ -83,49 +83,6 @@ productsCard1.forEach((crd) => {
                 selectedImage.style.transform = `scale(${scale}) translate(${originX}px, ${originY}px)`;
             }
         });
-        // let originX: number = 0;
-        // let originY: number = 0;
-        // let isDragging: boolean = false;
-        // let startX: number;
-        // let startY: number;
-        // let scale: number = 1;
-        // selectedImage.addEventListener("wheel", (e) => {
-        //   // e.preventDefault();
-        //   console.log(e);
-        //   console.log(isDragging);
-        //   scale += e.deltaY * -0.1;
-        //   scale = Math.min(Math.max(scale, 1), 3);
-        //   console.log(scale);
-        //   selectedImage.style.transform = `scale(${scale}) translate(${originX}px ,${originY}px)`;
-        // });
-        // selectedImage.addEventListener("mousemove", (e) => {
-        //   console.log("Moving");
-        //   // if (isDragging) {
-        //   let dx = (e.clientX - startX) / scale;
-        //   let dy = (e.clientY - startY) / scale;
-        //   console.log(e.clientX, "cx");
-        //   console.log(e.clientY, "cy");
-        //   console.log(startX, "sx");
-        //   console.log(startY, "ss");
-        //   console.log(scale, "skx");
-        //   console.log(scale, "sky");
-        //   originX += dx;
-        //   originY += dy;
-        //   console.log(originX, dx);
-        //   console.log(originY, dy);
-        //   startX = e.clientX;
-        //   startY = e.clientY;
-        //   selectedImage.style.transform = ` scale(${scale}) translate(${originX}px ,${originY}px)`;
-        //   // }
-        // });
-        // selectedImage.addEventListener("mousedown", (e) => {
-        //   isDragging = true;
-        //   selectedImage.style.cursor = "grabbing";
-        // });
-        // selectedImage.addEventListener("mouseup", (e) => {
-        //   isDragging = false;
-        //   selectedImage.style.cursor = "grab";
-        // });
         fullScreenImage === null || fullScreenImage === void 0 ? void 0 : fullScreenImage.addEventListener("click", () => {
             console.log("fullscreen");
             selectedImage.requestFullscreen();
@@ -154,3 +111,17 @@ let toolsBox = document.querySelector(".gallery .tools");
 let fullScreenImage = document.querySelector(".gallery .tools .full-screen");
 let zoomInImage = document.querySelector(".gallery .tools .zoom-in");
 let zoomOutImage = document.querySelector(".gallery .tools .zoom-out");
+cardsList.forEach((crds) => {
+    crds.forEach((crd, index) => {
+        let card = crd;
+        if (index >= 8) {
+            card.classList.add("d-none");
+        }
+    });
+});
+showMore_1.addEventListener("click", () => {
+    cardsFlowControl(pCards1, showMore_1);
+});
+showMore_2.addEventListener("click", () => {
+    cardsFlowControl(pCards2, showMore_2);
+});
