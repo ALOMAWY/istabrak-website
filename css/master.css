@@ -126,16 +126,31 @@
   color: var(--light);
 }
 
+.gallery .image {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.gallery .image img {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .gallery div:has(> svg) {
   -webkit-transition: 0.1s;
   transition: 0.1s;
+  font-size: 1.5rem;
+  color: var(--light);
+  opacity: 0.7;
 }
 .gallery div:has(> svg):hover {
   -webkit-transition: 0.1s;
   transition: 0.1s;
-  color: var(--skyblue);
+  color: var(--orange);
 }
-
 /* animation  */
 /* animation  */
 /* Start Landing  */
@@ -510,7 +525,7 @@ a {
 /* adding to bootstrap  End*/
 /* Global Styling  Start*/
 .container-75 {
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -684,19 +699,6 @@ header nav div svg {
 }
 .discover {
   position: relative;
-}
-.discover::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-color: white;
-  z-index: 1;
-  -webkit-animation: show-black-bg 1s linear 1 forwards;
-          animation: show-black-bg 1s linear 1 forwards;
-  animation-timeline: view(75vh 0);
 }
 .discover .container-75 .row {
   padding: 8rem 0;

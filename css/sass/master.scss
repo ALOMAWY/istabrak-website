@@ -40,7 +40,7 @@ a {
 /* Global Styling  Start*/
 
 .container-75 {
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -232,18 +232,7 @@ header {
 
 .discover {
   position: relative;
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: white;
-    z-index: 1;
-    animation: show-black-bg 1s linear 1 forwards;
-    animation-timeline: view(75vh 0);
-  }
+
   .container-75 {
     .row {
       padding: 8rem 0;

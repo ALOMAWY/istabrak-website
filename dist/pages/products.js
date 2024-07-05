@@ -16,19 +16,22 @@ let pCards2 = Array.from(productsCard2);
 // });
 function cardsFlowControl(cards, showMore) {
     let showingCards = cards === null || cards === void 0 ? void 0 : cards.filter((card) => !card.classList.contains("d-none")).length;
+    let scaleElementNumber = showingCards + 4;
     if (cards.length > showingCards) {
         showMore.classList.remove("d-none");
-        cards.forEach((ele, index) => {
-            if (index > showingCards && index < showingCards + 4) {
-                // function scalingShow(ele: HTMLElement) {
-                //   ele.style.scale = "0 1";
-                //   ele.classList.remove("d-none");
-                //   setTimeout(() => {
-                //     ele.style.scale = "1 1";
-                //   }, 0);
-                // }
-                // scalingShow(ele);
-                ele.classList.remove("d-none");
+        cards.forEach((elem, index) => {
+            if (index > showingCards && index < scaleElementNumber) {
+                function scalingShow(ele) {
+                    ele.style.scale = "0 1";
+                    ele.classList.remove("d-none");
+                    setTimeout(() => {
+                        ele.style.scale = "1 1";
+                    }, 0);
+                }
+                scalingShow(elem);
+            }
+            if (scaleElementNumber >= cards.length) {
+                showMore.classList.add("d-none");
             }
         });
     }
@@ -39,7 +42,7 @@ function cardsFlowControl(cards, showMore) {
 let cardsList = [Array.from(productsCard1), Array.from(productsCard2)];
 let gallery = document.getElementById("gallery");
 let selectedImage = document.getElementById("selected-image");
-productsCard1.forEach((crd) => {
+[...pCards1, ...pCards2].forEach((crd) => {
     let card = crd;
     let cardWidth = card.clientWidth;
     card.style.height = cardWidth + "px";
@@ -85,7 +88,8 @@ productsCard1.forEach((crd) => {
         });
         fullScreenImage === null || fullScreenImage === void 0 ? void 0 : fullScreenImage.addEventListener("click", () => {
             console.log("fullscreen");
-            selectedImage.requestFullscreen();
+            gallery.requestFullscreen();
+            selectedImage.style.maxWidth = "90%";
         });
         zoomInImage === null || zoomInImage === void 0 ? void 0 : zoomInImage.addEventListener("click", () => {
             let currentScale = parseInt(window.getComputedStyle(selectedImage).scale);

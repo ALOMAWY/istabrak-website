@@ -32,20 +32,25 @@ function cardsFlowControl(cards: Element[], showMore: HTMLElement): void {
     (card: Element) => !card.classList.contains("d-none")
   ).length;
 
+  let scaleElementNumber: number = showingCards + 4;
+
   if (cards.length > showingCards) {
     showMore.classList.remove("d-none");
 
-    cards.forEach((ele, index: number) => {
-      if (index > showingCards && index < showingCards + 4) {
-        // function scalingShow(ele: HTMLElement) {
-        //   ele.style.scale = "0 1";
-        //   ele.classList.remove("d-none");
-        //   setTimeout(() => {
-        //     ele.style.scale = "1 1";
-        //   }, 0);
-        // }
-        // scalingShow(ele);
-        ele.classList.remove("d-none");
+    cards.forEach((elem, index: number) => {
+      if (index > showingCards && index < scaleElementNumber) {
+        function scalingShow(ele: HTMLElement) {
+          ele.style.scale = "0 1";
+          ele.classList.remove("d-none");
+          setTimeout(() => {
+            ele.style.scale = "1 1";
+          }, 0);
+        }
+        scalingShow(elem as HTMLElement);
+      }
+
+      if (scaleElementNumber >= cards.length) {
+        showMore.classList.add("d-none");
       }
     });
   } else {
@@ -61,7 +66,7 @@ let selectedImage = document.getElementById(
   "selected-image"
 ) as HTMLImageElement;
 
-productsCard1.forEach((crd) => {
+[...pCards1, ...pCards2].forEach((crd) => {
   let card = crd as HTMLElement;
 
   let cardWidth = card.clientWidth;
@@ -123,7 +128,8 @@ productsCard1.forEach((crd) => {
 
     fullScreenImage?.addEventListener("click", () => {
       console.log("fullscreen");
-      selectedImage.requestFullscreen();
+      gallery.requestFullscreen();
+      selectedImage.style.maxWidth = "90%";
     });
 
     zoomInImage?.addEventListener("click", () => {
