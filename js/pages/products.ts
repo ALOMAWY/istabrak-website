@@ -15,18 +15,31 @@ let showMore_2 = document.querySelector(
 ) as HTMLElement;
 
 let pCards1 = Array.from(productsCard1);
+
 let pCards2 = Array.from(productsCard2);
 
-let productsSizeButtons = document.querySelectorAll(".products-size");
+let productsSizeLabels = document.querySelectorAll(".products-size");
 
-productsSizeButtons.forEach((e) => {
+let productsSizeLabel_1 = document.querySelector(
+  ".products-size-1"
+) as HTMLElement;
+
+let productsSizeLabel_2 = document.querySelector(
+  ".products-size-2"
+) as HTMLElement;
+
+productsSizeLabels.forEach((e) => {
   let ele = e as HTMLElement;
   let productsParent = document.querySelector(ele.dataset.size || "");
 
   ele.innerHTML = `${productsParent?.children.length} All Items` || "0 Items ";
 });
 
-function cardsFlowControl(cards: Element[], showMore: HTMLElement): void {
+function cardsFlowControl(
+  cards: Element[],
+  showMore: HTMLElement,
+  sizeLabel: HTMLElement
+): void {
   let startShowingCards = cards?.filter(
     (card: Element) => !card.classList.contains("d-none")
   ).length;
@@ -59,13 +72,10 @@ function cardsFlowControl(cards: Element[], showMore: HTMLElement): void {
     (card: Element) => !card.classList.contains("d-none")
   ).length;
 
-  productsSizeButtons.forEach((e) => {
-    let ele = e as HTMLElement;
-    let productsParent = document.querySelector(ele.dataset.size || "");
+  let productsParent = document.querySelector(sizeLabel.dataset.size || "");
 
-    ele.innerHTML =
-      `${endShowingCards} Of ${productsParent?.children.length}` || "0 Items ";
-  });
+  sizeLabel.innerHTML =
+    `${endShowingCards} Of ${productsParent?.children.length}` || "0 Items ";
 }
 
 let cardsList = [Array.from(productsCard1), Array.from(productsCard2)];
@@ -188,8 +198,8 @@ cardsList.forEach((crds) => {
 });
 
 showMore_1.addEventListener("click", () => {
-  cardsFlowControl(pCards1, showMore_1);
+  cardsFlowControl(pCards1, showMore_1, productsSizeLabel_1);
 });
 showMore_2.addEventListener("click", () => {
-  cardsFlowControl(pCards2, showMore_2);
+  cardsFlowControl(pCards2, showMore_2, productsSizeLabel_2);
 });
