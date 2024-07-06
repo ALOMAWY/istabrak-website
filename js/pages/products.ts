@@ -17,28 +17,27 @@ let showMore_2 = document.querySelector(
 let pCards1 = Array.from(productsCard1);
 let pCards2 = Array.from(productsCard2);
 
-// showMore_2?.addEventListener("click", () => {
-//   pCards2.forEach((e, i) => {
-//     let ele = e as HTMLElement;
-//     if (i >= showingCards && i < showingCards + 4) {
-//       scalingShow(ele);
-//     }
-//   });
+let productsSizeButtons = document.querySelectorAll(".products-size");
 
-// });
+productsSizeButtons.forEach((e) => {
+  let ele = e as HTMLElement;
+  let productsParent = document.querySelector(ele.dataset.size || "");
+
+  ele.innerHTML = `${productsParent?.children.length} All Items` || "0 Items ";
+});
 
 function cardsFlowControl(cards: Element[], showMore: HTMLElement): void {
-  let showingCards = cards?.filter(
+  let startShowingCards = cards?.filter(
     (card: Element) => !card.classList.contains("d-none")
   ).length;
 
-  let scaleElementNumber: number = showingCards + 4;
+  let scaleElementNumber: number = startShowingCards + 4;
 
-  if (cards.length > showingCards) {
+  if (cards.length > startShowingCards) {
     showMore.classList.remove("d-none");
 
     cards.forEach((elem, index: number) => {
-      if (index > showingCards && index < scaleElementNumber) {
+      if (index >= startShowingCards && index < scaleElementNumber) {
         function scalingShow(ele: HTMLElement) {
           ele.style.scale = "0 1";
           ele.classList.remove("d-none");
@@ -56,6 +55,17 @@ function cardsFlowControl(cards: Element[], showMore: HTMLElement): void {
   } else {
     showMore.classList.add("d-none");
   }
+  let endShowingCards = cards?.filter(
+    (card: Element) => !card.classList.contains("d-none")
+  ).length;
+
+  productsSizeButtons.forEach((e) => {
+    let ele = e as HTMLElement;
+    let productsParent = document.querySelector(ele.dataset.size || "");
+
+    ele.innerHTML =
+      `${endShowingCards} Of ${productsParent?.children.length}` || "0 Items ";
+  });
 }
 
 let cardsList = [Array.from(productsCard1), Array.from(productsCard2)];

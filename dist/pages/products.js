@@ -6,21 +6,19 @@ let showMore_1 = document.querySelector(".products .container-75 .holder-1 .show
 let showMore_2 = document.querySelector(".products .container-75 .holder-2 .show-more");
 let pCards1 = Array.from(productsCard1);
 let pCards2 = Array.from(productsCard2);
-// showMore_2?.addEventListener("click", () => {
-//   pCards2.forEach((e, i) => {
-//     let ele = e as HTMLElement;
-//     if (i >= showingCards && i < showingCards + 4) {
-//       scalingShow(ele);
-//     }
-//   });
-// });
+let productsSizeButtons = document.querySelectorAll(".products-size");
+productsSizeButtons.forEach((e) => {
+    let ele = e;
+    let productsParent = document.querySelector(ele.dataset.size || "");
+    ele.innerHTML = `${productsParent === null || productsParent === void 0 ? void 0 : productsParent.children.length} All Items` || "0 Items ";
+});
 function cardsFlowControl(cards, showMore) {
-    let showingCards = cards === null || cards === void 0 ? void 0 : cards.filter((card) => !card.classList.contains("d-none")).length;
-    let scaleElementNumber = showingCards + 4;
-    if (cards.length > showingCards) {
+    let startShowingCards = cards === null || cards === void 0 ? void 0 : cards.filter((card) => !card.classList.contains("d-none")).length;
+    let scaleElementNumber = startShowingCards + 4;
+    if (cards.length > startShowingCards) {
         showMore.classList.remove("d-none");
         cards.forEach((elem, index) => {
-            if (index > showingCards && index < scaleElementNumber) {
+            if (index >= startShowingCards && index < scaleElementNumber) {
                 function scalingShow(ele) {
                     ele.style.scale = "0 1";
                     ele.classList.remove("d-none");
@@ -38,6 +36,13 @@ function cardsFlowControl(cards, showMore) {
     else {
         showMore.classList.add("d-none");
     }
+    let endShowingCards = cards === null || cards === void 0 ? void 0 : cards.filter((card) => !card.classList.contains("d-none")).length;
+    productsSizeButtons.forEach((e) => {
+        let ele = e;
+        let productsParent = document.querySelector(ele.dataset.size || "");
+        ele.innerHTML =
+            `${endShowingCards} Of ${productsParent === null || productsParent === void 0 ? void 0 : productsParent.children.length}` || "0 Items ";
+    });
 }
 let cardsList = [Array.from(productsCard1), Array.from(productsCard2)];
 let gallery = document.getElementById("gallery");
