@@ -1,5 +1,10 @@
 .products {
   .container-75 {
+    h1.big-title {
+      span {
+        color: var(--orange);
+      }
+    }
     .holder {
       .row {
         div {
@@ -21,12 +26,22 @@
         width: fit-content;
         background-color: var(--orange);
         color: var(--light);
+        border: 2px solid var(--orange);
+
+        &:hover {
+          background-color: var(--light);
+          color: var(--orange) !important;
+          letter-spacing: 4px;
+          font-weight: 900 !important;
+        }
       }
     }
   }
 }
 
 .gallery {
+  z-index: 10;
+
   .image {
     height: fit-content;
     width: 70%;
@@ -37,12 +52,10 @@
     }
   }
   div:has(> svg) {
-    transition: 0.1s;
     font-size: 1.5rem;
     color: var(--light);
     opacity: 0.7;
     &:hover {
-      transition: 0.1s;
       color: var(--orange);
     }
   }

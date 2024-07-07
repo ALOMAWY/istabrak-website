@@ -13,6 +13,39 @@ products.forEach((ele, index) => {
     let showMore = document.querySelector(`${prod.dataset.showmore}`);
     let showLimit = 4;
     let productsHolder = Array.from(document.querySelectorAll(`.holder-${index + 1} .row > div`));
+    let productTitle = document.querySelector(`.product > h1.big-title`);
+    productTitle === null || productTitle === void 0 ? void 0 : productTitle.classList.add("bg-white");
+    let titleHeight = productTitle === null || productTitle === void 0 ? void 0 : productTitle.clientHeight;
+    productTitle === null || productTitle === void 0 ? void 0 : productTitle.remove();
+    let titleHolder = document.createElement("div");
+    titleHolder.classList.add("title-holder", "big-title", "bg-white");
+    if (productTitle) {
+        titleHolder.appendChild(productTitle);
+    }
+    prod.prepend(titleHolder);
+    titleHolder.style.height = `${titleHeight}px`;
+    titleHolder.style.width = `100%`;
+    // Function to update the position of the product title
+    function updateProductTitlePosition() {
+        let scrollY = window.scrollY;
+        let offsetTop = prod.offsetTop;
+        // let titleHeight: number = productTitle.clientHeight;
+        let productsHeight = prod.clientHeight;
+        let inProductsScope = scrollY >= offsetTop &&
+            scrollY < offsetTop + (productsHeight - titleHeight);
+        productTitle.classList.toggle("position-fixed", inProductsScope);
+        if (inProductsScope) {
+            productTitle.classList.add("start-0", "py-4", "px-2", "w-100", "z-3", "shadow-sm");
+            const computedMarginTop = window.getComputedStyle(productTitle).marginTop;
+            productTitle.style.top = `-${computedMarginTop}`;
+        }
+        else {
+            productTitle.classList.remove("start-0", "py-4", "px-2", "w-100", "z-3", "shadow-sm");
+            productTitle.style.top = ` `;
+        }
+    }
+    // Event listener for scroll
+    window.addEventListener("scroll", updateProductTitlePosition);
     showMore === null || showMore === void 0 ? void 0 : showMore.addEventListener("click", () => {
         let productsHolder = Array.from(document.querySelectorAll(`.holder-${index + 1} .row > div`));
         let startShowingCards = Array.from(productsHolder).filter((crd) => {
@@ -92,13 +125,6 @@ function scalingShow(ele) {
         ele.style.scale = "1 1";
     }, 0);
 }
-// window.addEventListener("scroll", () => {
-//   let scrollY = window.scrollY;
-//   let offsetTop = title.offsetTop;
-//   if (scrollY >= offsetTop && scrollY < offsetTop.parent.clientHeight) {
-//     title.classList.add("position-fixed");
-//   }
-// });
 // card.addEventListener("click", () => {
 //   let img = card.firstElementChild as HTMLImageElement;
 //   gallery.classList.remove("d-none");
