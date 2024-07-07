@@ -28,10 +28,11 @@
 
 .gallery {
   .image {
-    width: fit-content;
     height: fit-content;
+    width: 70%;
 
     img {
+      width: 100%;
       height: fit-content;
     }
   }
@@ -47,5 +48,29 @@
   }
 
   .tools {
+    flex-direction: column;
+    height: 100%;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .gallery {
+    flex-direction: column;
+    .image {
+      margin-top: 15rem;
+      width: 95% !important;
+      img {
+      }
+    }
+    div:has(> svg) {
+    }
+
+    .tools {
+      flex-direction: row;
+      justify-content: space-between !important;
+      width: 100%;
+      gap: 0;
+    }
   }
 }
