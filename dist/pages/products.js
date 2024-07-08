@@ -1,6 +1,10 @@
 "use strict";
 let products = Array.from(document.querySelectorAll(".product"));
 let imageContainer = document.querySelector(".gallery .image");
+let gallery = document.getElementById("gallery");
+let selectedImage = document.getElementById("selected-image");
+selectedImage.style.scale = `1`;
+let galleryCloseButton = document.querySelector(".gallery .close-gallery");
 let toolsBox = document.querySelector(".gallery .tools");
 let fullScreenImage = document.querySelector(".gallery .tools .full-screen");
 let zoomInImage = document.querySelector(".gallery .tools .zoom-in");
@@ -91,14 +95,10 @@ products.forEach((ele, index) => {
             let clickedImage = card.children[0];
             if (clickedImage.tagName == "IMG")
                 selectedImage.src = clickedImage.src;
+            imageContainer.style.height = selectedImage.clientHeight + "px";
         });
     });
 });
-let productsImages = document.querySelectorAll(".products .img-holder img");
-let gallery = document.getElementById("gallery");
-let selectedImage = document.getElementById("selected-image");
-selectedImage.style.scale = `1`;
-let galleryCloseButton = document.querySelector(".gallery .close-gallery");
 galleryCloseButton === null || galleryCloseButton === void 0 ? void 0 : galleryCloseButton.addEventListener("click", () => {
     gallery.classList.remove("d-flex");
     gallery.classList.add("d-none");

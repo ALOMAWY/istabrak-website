@@ -2,6 +2,16 @@ let products = Array.from(document.querySelectorAll(".product"));
 
 let imageContainer = document.querySelector(".gallery .image") as HTMLElement;
 
+let gallery = document.getElementById("gallery") as HTMLElement;
+
+let selectedImage = document.getElementById(
+  "selected-image"
+) as HTMLImageElement;
+
+selectedImage.style.scale = `1`;
+
+let galleryCloseButton = document.querySelector(".gallery .close-gallery");
+
 let toolsBox = document.querySelector(".gallery .tools");
 
 let fullScreenImage = document.querySelector(
@@ -155,19 +165,11 @@ products.forEach((ele: Element, index: number) => {
       let clickedImage = card.children[0] as HTMLImageElement;
 
       if (clickedImage.tagName == "IMG") selectedImage.src = clickedImage.src;
+
+      imageContainer.style.height = selectedImage.clientHeight + "px";
     });
   });
 });
-
-let productsImages = document.querySelectorAll(".products .img-holder img");
-
-let gallery = document.getElementById("gallery") as HTMLElement;
-
-let selectedImage = document.getElementById(
-  "selected-image"
-) as HTMLImageElement;
-selectedImage.style.scale = `1`;
-let galleryCloseButton = document.querySelector(".gallery .close-gallery");
 
 galleryCloseButton?.addEventListener("click", () => {
   gallery.classList.remove("d-flex");
