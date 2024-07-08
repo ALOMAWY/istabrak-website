@@ -92,19 +92,12 @@ products.forEach((ele, index) => {
             if (clickedImage.tagName == "IMG")
                 selectedImage.src = clickedImage.src;
         });
-        // sh?.addEventListener("click",()=>{})
     });
 });
 let productsImages = document.querySelectorAll(".products .img-holder img");
 let gallery = document.getElementById("gallery");
 let selectedImage = document.getElementById("selected-image");
-selectedImage.addEventListener("wheel", (event) => {
-    let currentScale = window.getComputedStyle(selectedImage).scale;
-    console.log(currentScale);
-    if (event.deltaY > 0) {
-        selectedImage.style.scale = `${parseInt(currentScale) + 0.1}`;
-    }
-});
+selectedImage.style.scale = `1`;
 let galleryCloseButton = document.querySelector(".gallery .close-gallery");
 galleryCloseButton === null || galleryCloseButton === void 0 ? void 0 : galleryCloseButton.addEventListener("click", () => {
     gallery.classList.remove("d-flex");
@@ -123,8 +116,20 @@ fullScreenImage === null || fullScreenImage === void 0 ? void 0 : fullScreenImag
         fullScreenImage.innerHTML = `<i class="fa-solid fa-compress"></i>`;
     }
 });
-zoomInImage === null || zoomInImage === void 0 ? void 0 : zoomInImage.addEventListener("click", () => { });
-zoomOutImage === null || zoomOutImage === void 0 ? void 0 : zoomOutImage.addEventListener("click", () => { });
+zoomInImage === null || zoomInImage === void 0 ? void 0 : zoomInImage.addEventListener("click", () => {
+    let currentScale = parseInt(window.getComputedStyle(selectedImage).scale);
+    console.log(currentScale);
+    if (currentScale <= 4) {
+        selectedImage.style.scale = `${currentScale * 2}`;
+    }
+});
+zoomOutImage === null || zoomOutImage === void 0 ? void 0 : zoomOutImage.addEventListener("click", () => {
+    let currentScale = parseInt(window.getComputedStyle(selectedImage).scale);
+    console.log(currentScale);
+    if (currentScale > 1) {
+        selectedImage.style.scale = `${currentScale / 2}`;
+    }
+});
 function scalingShow(ele) {
     ele.style.scale = "0 1";
     ele.classList.remove("d-none");

@@ -156,8 +156,6 @@ products.forEach((ele: Element, index: number) => {
 
       if (clickedImage.tagName == "IMG") selectedImage.src = clickedImage.src;
     });
-
-    // sh?.addEventListener("click",()=>{})
   });
 });
 
@@ -168,16 +166,7 @@ let gallery = document.getElementById("gallery") as HTMLElement;
 let selectedImage = document.getElementById(
   "selected-image"
 ) as HTMLImageElement;
-
-selectedImage.addEventListener("wheel", (event) => {
-  let currentScale = window.getComputedStyle(selectedImage).scale;
-
-  console.log(currentScale);
-  if (event.deltaY > 0) {
-    selectedImage.style.scale = `${parseInt(currentScale) + 0.1}`;
-  }
-});
-
+selectedImage.style.scale = `1`;
 let galleryCloseButton = document.querySelector(".gallery .close-gallery");
 
 galleryCloseButton?.addEventListener("click", () => {
@@ -203,8 +192,23 @@ fullScreenImage?.addEventListener("click", () => {
     fullScreenImage.innerHTML = `<i class="fa-solid fa-compress"></i>`;
   }
 });
-zoomInImage?.addEventListener("click", () => {});
-zoomOutImage?.addEventListener("click", () => {});
+
+zoomInImage?.addEventListener("click", () => {
+  let currentScale = parseInt(window.getComputedStyle(selectedImage).scale);
+  console.log(currentScale);
+  if (currentScale <= 4) {
+    selectedImage.style.scale = `${currentScale * 2}`;
+  }
+});
+
+zoomOutImage?.addEventListener("click", () => {
+  let currentScale = parseInt(window.getComputedStyle(selectedImage).scale);
+
+  console.log(currentScale);
+  if (currentScale > 1) {
+    selectedImage.style.scale = `${currentScale / 2}`;
+  }
+});
 
 function scalingShow(ele: HTMLElement) {
   ele.style.scale = "0 1";
