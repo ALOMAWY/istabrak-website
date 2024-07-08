@@ -169,6 +169,15 @@ let selectedImage = document.getElementById(
   "selected-image"
 ) as HTMLImageElement;
 
+selectedImage.addEventListener("wheel", (event) => {
+  let currentScale = window.getComputedStyle(selectedImage).scale;
+
+  console.log(currentScale);
+  if (event.deltaY > 0) {
+    selectedImage.style.scale = `${parseInt(currentScale) + 0.1}`;
+  }
+});
+
 let galleryCloseButton = document.querySelector(".gallery .close-gallery");
 
 galleryCloseButton?.addEventListener("click", () => {

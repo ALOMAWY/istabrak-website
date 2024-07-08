@@ -98,6 +98,13 @@ products.forEach((ele, index) => {
 let productsImages = document.querySelectorAll(".products .img-holder img");
 let gallery = document.getElementById("gallery");
 let selectedImage = document.getElementById("selected-image");
+selectedImage.addEventListener("wheel", (event) => {
+    let currentScale = window.getComputedStyle(selectedImage).scale;
+    console.log(currentScale);
+    if (event.deltaY > 0) {
+        selectedImage.style.scale = `${parseInt(currentScale) + 0.1}`;
+    }
+});
 let galleryCloseButton = document.querySelector(".gallery .close-gallery");
 galleryCloseButton === null || galleryCloseButton === void 0 ? void 0 : galleryCloseButton.addEventListener("click", () => {
     gallery.classList.remove("d-flex");
